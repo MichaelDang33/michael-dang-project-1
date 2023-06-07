@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+
+  <title>Michael's Hangman Game</title>
+</head>
+
+<body>
+    <div id="firstPage">
+        <header>
+            <h1>Are You Smarter Than An Aspiring Dev?</h1>
+            <p>A Hangman Game By Michael Dang</p>
+        </header>
+        <p id="categoryPrompt">Choose A Category To Begin!</p>
+        <div id="categoryButtons">
+            <div id="foodButton" onclick="foodButton ()">Food</div>
+            <div id="celebrityButton" onclick="celebrityButton ()">Celebrities</div>
+            <div id="sportsButton" onclick="sportsButton ()">Sports</div>
+        </div>
+    </div>
+    <div id="gamePage">
+        <header>
+            <h1>Michael's Hangman Game</h1>
+            <p id="selectedCategoryMsg">Your category is: " ".</p>
+        </header>
+        <img src="https://o.remove.bg/downloads/e028a9c4-b8da-40d6-8160-4fa568792655/3-35634_noose-corda-no-pescoo-png-transparent-png-removebg-preview.png" alt="Hangman Gallow">
+            <p id="letterInstructions">Use these buttons to try and guess your word(s)!</p>
+            <p id="incorrectGuesses">0/7</p>
+        <div id="guessContainer"></div>
+        <div id="letterContainer"></div>
+        <div id="hintContainer"></div>
+        <div id="resetContainer"></div>
+    </div>
+    <div id="endPageWin">
+        <header>
+            <h1>YOU WIN!!!</h1>
+            <p id="winnerMessage">You must be a GENIUS!</p>
+            <p id="wordResult">The correct word was " ".</p>
+        </header>
+        <button id="resetButtonWin">Try Again?</div>
+    </div>
+    <div id="endPageLose">
+        <header>
+            <h1>YOU LOSE...</h1>
+            <p id="loserMessage">Guess you aren't smarter than an aspiring dev...</p>
+            <p id="wordResult">The correct word was " ".</p>
+        </header>
+        <button id="resetButtonLose">Try Again?</button>
+    </div>
+  <script src="script.js"></script>
+
+  <!--
+  This script places a badge on your repl's full-browser view back to your repl's cover
+  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+  teal, blue, blurple, magenta, pink!
+  -->
+  <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
+</body>
+
+</html>
