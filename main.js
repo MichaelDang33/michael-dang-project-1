@@ -25,7 +25,8 @@ let docLetterContainer = document.getElementById("docLetterContainer");
 let docHangmanDisplay = document.getElementById("docHangmanDisplay");
 let docMsgPrompt = document.getElementById("docMsgPrompt");
 
-/*----- event listeners -----*/
+/*----- functions -----*/
+
 window.onload = function () {
     render("Your category for the generated word is 'FOOD'!");  
 }
@@ -34,7 +35,6 @@ window.onkeydown = function(event) {
   processUserInput(event.key.toUpperCase());
 }
 
-/*----- functions -----*/
 
 function startNewGame() {
   generatedWord = getGeneratedWord();
