@@ -17,7 +17,7 @@ html, body {
 #docHangmanDisplay {
     height: 30%;
     background-color: rgb(234, 233, 187);
-    background-image: url("/images/hangman0.jpg");
+    background-image: url("images/hangman0.jpg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

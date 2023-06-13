@@ -12,6 +12,12 @@ const validLetters = [
   "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" 
 ];
 
+/*----- state variables -----*/
+
+let generatedWord = getGeneratedWord();
+let userGuessInput = [];
+let endResult = false;
+
 /*----- cached elements  -----*/
 
 let docGeneratedWord = document.getElementById("docGeneratedWord");
@@ -19,15 +25,9 @@ let docLetterContainer = document.getElementById("docLetterContainer");
 let docHangmanDisplay = document.getElementById("docHangmanDisplay");
 let docMsgPrompt = document.getElementById("docMsgPrompt");
 
-/*----- state variables -----*/
-
-let generatedWord = getGeneratedWord();
-let userGuessInput = [];
-let endResult = false;
-
 /*----- event listeners -----*/
 window.onload = function () {
-    renderGeneratedWord();  
+    render("Your category for the generated word is 'FOOD'!");  
 }
 
 window.onkeydown = function(event) {
@@ -57,9 +57,9 @@ function processUserInput(userInput) {
           render("Aww, you've run out of guesses! You lose! Try again? Press [esc] to start a new game!");
         } else if (checkWinCondition()) {
           endResult = true;
-          render("You're a genius! You win! Try your luck again by pressing [esc] to start a new game!");
+          render("You're a genius! You win! Try your luck again by pressing/clicking on [esc] to start a new game!");
         } else {
-          render ("Use these letters to try and guess your word(s)!");
+          render ("Your category for the generated word is 'FOOD'!");
         } 
     }
   } else if (userInput == "ESCAPE") {
@@ -82,7 +82,7 @@ function renderMsgPrompt(msg) {
 
 function renderHangmanDisplay() {
   let numIncorrectGuesses = userGuessIncorrect();
-  docHangmanDisplay.style.backgroundImage = "url('images/hangman5.jpg')"
+  docHangmanDisplay.style.backgroundImage = "url('images/hangman" + numIncorrectGuesses + ".jpg')";
 }
 
 function renderLetterBank() {
@@ -102,7 +102,6 @@ function renderLetterBank() {
           processUserInput(thisLetter);
         }
     }
-    
     docLetterContainer.appendChild(thisSpan);
     // Stylistic function in order to add an empty <span> inbetween the "U" and "V" letters.
     if (thisLetter == "U") {
@@ -117,7 +116,7 @@ function renderLetterBank() {
     thisSpan.innerHTML = "esc";
     thisSpan.onclick = function () {
       startNewGame();
-    };
+    }
     docLetterContainer.appendChild(thisSpan);
   }
 }
@@ -147,7 +146,7 @@ function userGuessIncorrect() {
       count++;
     }
   }
-  if (count > 6) { // if method to not let count go past 7 and ensure 
+  if (count > 6) { 
     count = 6;
   }
   return count;
@@ -166,7 +165,7 @@ function checkWinCondition () {
 }
 
 function getGeneratedWord() {
-  let randomIndex = getRndInteger(0, answerBank.length-1);
+  let randomIndex = getRndInteger(0, answerBank.length - 1);
   return answerBank[randomIndex];
 }
 
