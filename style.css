@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: "Space Mono", monospace;
+    background-color: antiquewhite
+}
+
+#docTitle {
+    background-color: rgb(234, 233, 187);
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#docHangmanDisplay {
+    height: 30%;
+    background-color: rgb(234, 233, 187);
+    background-image: url("/images/hangman0.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px;
+}
+
+#docGeneratedWord {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100px;
+    background-color: rgb(117, 79, 30);
+    color: white;
+    font-size: 32px;
+    letter-spacing: 3px;
+}
+
+#docLetterContainer {
+    display: grid;
+    grid-template-columns: 30px 30px 30px 30px 30px 30px 30px;
+    grid-auto-rows: 48px;
+    grid-gap: 8px;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.letter {
+    background-color: rgba(127, 255, 255, 0.623);
+    border-radius: 4px;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.escape {
+    background-color: rgba(127, 255, 255, 0.623);
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.dim {
+    opacity: 0.4;
+}
+
+#docMsgPrompt {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#docButtonContainer {
+    display: grid; 
+    grid-template-columns: 62px 62px;
+    grid-auto-rows: 32px;
+    grid-gap: 8px;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.button {
+    background-color: rgba(229, 255, 127, 0.623);
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#docButtonPrompt {
+    text-align: center;
+    padding: 10px;
+}
+
+.invisible {
+    display: none;
+}
